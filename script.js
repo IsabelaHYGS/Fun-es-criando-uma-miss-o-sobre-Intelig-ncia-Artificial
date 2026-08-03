@@ -71,8 +71,3 @@ function respostaSelecionada(opcaoSelecionada) {
   atual++;
   mostraPergunta();
 }
-
-  atual++;
-  mostraPergunta();
-}
- mostraPergunta();
