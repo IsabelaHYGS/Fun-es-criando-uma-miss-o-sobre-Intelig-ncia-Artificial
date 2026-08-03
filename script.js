@@ -23,7 +23,7 @@ const perguntas = [
       "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
     alternativas: [
       "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-      "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendo a importância de proteger os trabalhadores.",
+      "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
     ],
   },
   {
@@ -48,26 +48,26 @@ let atual = 0;
 let perguntaAtual;
 
 function mostraPergunta() {
+  if (atual >= perguntas.length) {
+    exibeResultado();
+    return;
+  }
   perguntaAtual = perguntas[atual];
   caixaPerguntas.textContent = perguntaAtual.enunciado;
+  caixaAlternativas.textContent = ""; // Limpa os botões anteriores
   mostraAlternativas();
 }
-function mostraAlternativas() {}
-
-mostraPergunta();
 
 function mostraAlternativas() {
   for (const alternativa of perguntaAtual.alternativas) {
     const botaoAlternativas = document.createElement("button");
     botaoAlternativas.textContent = alternativa;
-    botao.addEventListener("click", () => respostaSelecionada(opcao));
+    botaoAlternativas.addEventListener("click", () => respostaSelecionada());
     caixaAlternativas.appendChild(botaoAlternativas);
   }
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-  const afirmacoes = opcaoSelecionada.afirmacoes;
-  historiaFinal += afirmacoes + " ";
+function respostaSelecionada() {
   atual++;
   mostraPergunta();
 }
