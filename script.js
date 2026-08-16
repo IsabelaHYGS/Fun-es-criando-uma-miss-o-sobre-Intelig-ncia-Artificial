@@ -110,7 +110,7 @@ function respostaSelecionada(opcaoSelecionada) {
 
 function exibeResultado() {
   caixaPerguntas.textContent = "Em 2049...";
-  caixaAlternativas.textContent = "No início ficou com medo do que essa tecnologia pode fazer. Conseguiu utilizar a IA para buscar informações úteis. Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética. Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final.";
+  caixaAlternativas.textContent = "";
   textoResultado.textContent = historiaFinal;
 }
 
