@@ -11,7 +11,7 @@ const perguntas = [
     alternativas: [
       {
         texto: "Isso é assustador!",
-        afirmacao: "Ficou assustado com a velocidade do avanço da tecnologia."
+        afirmacao: "No início ficou com medo do que essa tecnologia pode fazer."
       },
       {
         texto: "Isso é maravilhoso!",
@@ -24,8 +24,8 @@ const perguntas = [
       "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
     alternativas: [
       {
-        texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-        afirmacao: "Usou a IA como ferramenta para simplificar pesquisas de trabalho."
+        texto: "Utiliza uma ferramenta de busca na internet que utilizza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
+        afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
       },
       {
         texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
@@ -43,7 +43,7 @@ const perguntas = [
       },
       {
         texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendo a importância de proteger os trabalhadores.",
-        afirmacao: "Preocupa-se com os impactos sociais do desemprego tecnológico."
+        afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
       }
     ],
   },
@@ -53,7 +53,7 @@ const perguntas = [
     alternativas: [
       {
         texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-        afirmacao: "Optou pela criação autoral sem o uso direto da IA."
+        afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
       },
       {
         texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
@@ -71,7 +71,7 @@ const perguntas = [
       },
       {
         texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-        afirmacao: "Compreendeu a necessidade da revisão humana crítica e ética no uso da tecnologia."
+        afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final."
       }
     ],
   },
