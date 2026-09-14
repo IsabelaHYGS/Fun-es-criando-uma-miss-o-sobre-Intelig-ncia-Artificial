@@ -50,3 +50,8 @@ return lista[posicao];
 }
 
 mostraPergunta();
+
+function jogaNovamente(){
+    atual = 0;
+    historiaFinal = "";
+    mostraPergunta();
