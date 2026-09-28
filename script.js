@@ -6,7 +6,7 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
-const botaoJogarNovamente = document.querySelector(“.novamente-btn”);
+const botaoJogarNovamente = document.querySelector(".novamente-btn");
 
 let atual = 0;
 let perguntaAtual;
@@ -14,7 +14,7 @@ let historiaFinal = "";
 
 function mostraPergunta() {
   if (atual >= perguntas.length) {
-    exibeResultado();
+    mostraResultado();
     return;
   }
   perguntaAtual = perguntas[atual];
@@ -33,41 +33,36 @@ function mostraAlternativas() {
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-historiaFinal += afirmacoes + “ “;
-atual++;
-mostraPergunta();
+  const afirmacoes = Array.isArray(opcaoSelecionada.afirmacao)
+    ? aleatorio(opcaoSelecionada.afirmacao)
+    : opcaoSelecionada.afirmacao;
+
+  historiaFinal += afirmacoes + " ";
+  atual++;
+  mostraPergunta();
 }
 
 function mostraResultado() {
-caixaPerguntas.textContent = `Em 2049, ${nome}`;
-textoResultado.textContent = historiaFinal;
-caixaAlternativas.textContent = "";
-caixaResultado.classList.add("mostrar"); botaoJogarNovamente.addEventListener("click", jogaNovamente());
+  caixaPerguntas.textContent = `Em 2049, ${nome}`;
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = "";
+  caixaResultado.classList.add("mostrar");
 }
 
 function jogaNovamente() {
-atual = 0;
-historiaFinal = "";
-caixaResultado.classList.remove("mostrar");
+  atual = 0;
+  historiaFinal = "";
+  caixaResultado.classList.remove("mostrar");
+  mostraPergunta();
+}
+
+function substituiNome() {
+  for (const pergunta of perguntas) {
+    pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+  }
+}
+
+substituiNome();
 mostraPergunta();
-}
 
-function aleatorio(lista) {
-const posicao = Math.floor(Math.random()* lista.length);
-return lista[posicao];
-}
-
-mostraPergunta();
-
-function jogaNovamente(){
-    atual = 0;
-    historiaFinal = "";
-
-  function substituiNome(){
-for(const pergunta of perguntas){
-pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
-    }
-}
-  substituiNome();
-    mostraPergunta();
+botaoJogarNovamente.addEventListener("click", jogaNovamente);
