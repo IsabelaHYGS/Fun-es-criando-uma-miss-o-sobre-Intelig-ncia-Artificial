@@ -32,15 +32,28 @@ function mostraAlternativas() {
   }
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-  const afirmacoes = Array.isArray(opcaoSelecionada.afirmacao)
-    ? aleatorio(opcaoSelecionada.afirmacao)
-    : opcaoSelecionada.afirmacao;
 
-  historiaFinal += afirmacoes + " ";
-  atual++;
-  mostraPergunta();
-}
+function respostaSelecionada(opcaoSelecionada) { 
+
+  const afirmacoes = aleatorio(opcaoSelecionada.afirmacao); 
+
+  historiaFinal += afirmacoes + " "; 
+
+  if (opcaoSelecionada.proxima !== undefined) { 
+
+    atual = opcaoSelecionada.proxima; 
+
+  } else { 
+
+    mostraResultado(); 
+
+    return; 
+
+  } 
+
+  mostraPergunta(); 
+
+} 
 
 function mostraResultado() {
   caixaPerguntas.textContent = `Em 2049, ${nome}`;
