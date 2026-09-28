@@ -1,4 +1,4 @@
-import {aleatorio} from ‘./aleatorio.js’;
+import {aleatorio, nome} from './aleatorio.js';
 import {perguntas} from ‘./perguntas.js;
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
@@ -40,7 +40,7 @@ mostraPergunta();
 }
 
 function mostraResultado() {
-caixaPerguntas.textContent = "Em 2049...";
+caixaPerguntas.textContent = `Em 2049, ${nome}`;
 textoResultado.textContent = historiaFinal;
 caixaAlternativas.textContent = "";
 caixaResultado.classList.add("mostrar"); botaoJogarNovamente.addEventListener("click", jogaNovamente());
@@ -63,4 +63,11 @@ mostraPergunta();
 function jogaNovamente(){
     atual = 0;
     historiaFinal = "";
+
+  function substituiNome(){
+for(const pergunta of perguntas){
+pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
+}
+  substituiNome();
     mostraPergunta();
