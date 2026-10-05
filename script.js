@@ -1,5 +1,5 @@
-import {aleatorio, nome} from './aleatorio.js';
-import {perguntas} from ‘./perguntas.js;
+import { aleatorio, nome } from './aleatorio.js';
+import { perguntas } from './perguntas.js';
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
@@ -15,15 +15,16 @@ let perguntaAtual;
 let historiaFinal = "";
 
 botaoIniciar.addEventListener('click', iniciaJogo);
+botaoJogarNovamente.addEventListener("click", jogaNovamente);
 
 function iniciaJogo() {
-atual = 0;
-historiaFinal = "";
-telaInicial.style.display = 'none';
-caixaPerguntas.classList.remove("mostrar");
-caixaAlternativas.classList.remove("mostrar");
-caixaResultado.classList.remove("mostrar");
-mostraPergunta();
+  atual = 0;
+  historiaFinal = "";
+  telaInicial.style.display = 'none';
+  caixaPerguntas.style.display = 'block';
+  caixaAlternativas.style.display = 'block';
+  caixaResultado.classList.remove("mostrar");
+  mostraPergunta();
 }
 
 function mostraPergunta() {
@@ -46,33 +47,23 @@ function mostraAlternativas() {
   }
 }
 
-
 function respostaSelecionada(opcaoSelecionada) { 
-
   const afirmacoes = aleatorio(opcaoSelecionada.afirmacao); 
-
   historiaFinal += afirmacoes + " "; 
 
   if (opcaoSelecionada.proxima !== undefined) { 
-
     atual = opcaoSelecionada.proxima; 
-
   } else { 
-
     mostraResultado(); 
-
     return; 
-
   } 
-
   mostraPergunta(); 
-
 } 
 
 function mostraResultado() {
-  caixaPerguntas.textContent = `Em 2049, ${nome}`;
-  textoResultado.textContent = historiaFinal;
-  caixaAlternativas.textContent = "";
+  caixaPerguntas.style.display = 'none';
+  caixaAlternativas.style.display = 'none';
+  textoResultado.textContent = `Em 2049, ${nome} ${historiaFinal}`;
   caixaResultado.classList.add("mostrar");
 }
 
@@ -80,7 +71,7 @@ function jogaNovamente() {
   atual = 0;
   historiaFinal = "";
   caixaResultado.classList.remove("mostrar");
-  mostraPergunta();
+  telaInicial.style.display = 'block';
 }
 
 function substituiNome() {
@@ -90,5 +81,3 @@ function substituiNome() {
 }
 
 substituiNome();
-
-botaoJogarNovamente.addEventListener("click", jogaNovamente);
